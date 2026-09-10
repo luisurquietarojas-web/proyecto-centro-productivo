@@ -1,189 +1,322 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Centro Productivo | Región de Coquimbo</title>
+  <title>Centro Productivo de Manufactura | Región de Coquimbo</title>
 
-<style>
-* {
-    box-sizing: border-box;
-}
-
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f6f8;
-    color: #17324d;
-}
-
-.container {
-    max-width: 850px;
-    margin: 0 auto;
-    padding: 45px 22px;
-}
-
-.header {
-    background: #173f66;
-    color: white;
-    padding: 42px 30px;
-    border-radius: 14px 14px 0 0;
-    text-align: center;
-}
-
-.header h1 {
-    margin: 0;
-    font-size: 30px;
-    line-height: 1.2;
-    font-weight: 700;
-}
-
-.header p {
-    margin: 14px 0 0;
-    font-size: 17px;
-    opacity: 0.95;
-}
-
-.content {
-    background: white;
-    padding: 35px 30px 40px;
-    border-radius: 0 0 14px 14px;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
-}
-
-.intro {
-    text-align: center;
-    margin-bottom: 30px;
-}
-
-.intro h2 {
-    margin: 0 0 8px;
-    font-size: 22px;
-}
-
-.intro p {
-    margin: 0;
-    color: #5c6873;
-}
-
-.document {
-    border: 1px solid #dfe5ea;
-    border-radius: 10px;
-    padding: 22px;
-    margin-bottom: 16px;
-    background: #fafbfc;
-}
-
-.document h3 {
-    margin: 0 0 7px;
-    font-size: 19px;
-}
-
-.document p {
-    margin: 0 0 16px;
-    color: #66727d;
-    font-size: 15px;
-}
-
-.button {
-    display: inline-block;
-    padding: 11px 20px;
-    background: #173f66;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-    font-weight: 600;
-    font-size: 14px;
-}
-
-.button:hover {
-    opacity: 0.9;
-}
-
-.footer {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 13px;
-    color: #7a858e;
-}
-
-@media (max-width: 600px) {
-    .container {
-        padding: 20px 12px;
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    .header {
-        padding: 32px 20px;
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      line-height: 1.6;
     }
 
-    .header h1 {
-        font-size: 24px;
+    /* CABECERA */
+    header {
+      background: #8b0000;
+      color: white;
+      padding: 55px 20px 50px;
+      text-align: center;
+      border-bottom: 6px solid #650000;
     }
 
-    .content {
-        padding: 25px 18px 30px;
+    .ur {
+      font-size: 42px;
+      font-weight: 900;
+      letter-spacing: 5px;
+      margin-bottom: 18px;
     }
-}
-</style>
+
+    header h1 {
+      max-width: 950px;
+      margin: auto;
+      font-size: 31px;
+      line-height: 1.2;
+      font-weight: 700;
+    }
+
+    header p {
+      margin-top: 15px;
+      font-size: 17px;
+      opacity: 0.92;
+    }
+
+    /* CONTENIDO */
+    main {
+      max-width: 1050px;
+      margin: 0 auto;
+      padding: 55px 20px 70px;
+    }
+
+    .intro {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .intro h2 {
+      color: #8b0000;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .intro p {
+      color: #666;
+      font-size: 16px;
+    }
+
+    /* DOCUMENTOS */
+    .documents {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .card {
+      background: white;
+      border-radius: 8px;
+      padding: 32px 25px;
+      border-top: 5px solid #8b0000;
+      box-shadow: 0 5px 18px rgba(0,0,0,0.08);
+      display: flex;
+      flex-direction: column;
+      min-height: 280px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 9px 25px rgba(0,0,0,0.13);
+    }
+
+    .number {
+      color: #8b0000;
+      font-size: 14px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      margin-bottom: 15px;
+    }
+
+    .card h3 {
+      font-size: 21px;
+      color: #222;
+      margin-bottom: 13px;
+    }
+
+    .card p {
+      color: #666;
+      font-size: 15px;
+      flex-grow: 1;
+    }
+
+    /* BOTÓN */
+    .button {
+      display: block;
+      margin-top: 25px;
+      background: #8b0000;
+      color: white;
+      text-decoration: none;
+      text-align: center;
+      padding: 13px 16px;
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 14px;
+      letter-spacing: 0.3px;
+      transition: background 0.2s ease;
+    }
+
+    .button:hover {
+      background: #650000;
+    }
+
+    /* SEPARADOR */
+    .line {
+      width: 70px;
+      height: 4px;
+      background: #8b0000;
+      margin: 50px auto 30px;
+    }
+
+    /* PIE */
+    footer {
+      background: #222;
+      color: #bbb;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 14px;
+    }
+
+    footer strong {
+      color: white;
+    }
+
+    footer .red {
+      color: #c40000;
+      font-weight: bold;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 800px) {
+      .documents {
+        grid-template-columns: 1fr;
+      }
+
+      header h1 {
+        font-size: 25px;
+      }
+
+      .ur {
+        font-size: 35px;
+      }
+
+      main {
+        padding-top: 40px;
+      }
+    }
+  </style>
 </head>
 
 <body>
 
-<div class="container">
+  <header>
+    <div class="ur">UR</div>
 
-    <div class="header">
-        <h1>Centro Productivo de Manufactura,<br>
-        Mobiliario y Soluciones Habitacionales</h1>
-        <p>Región de Coquimbo · Documentación del proyecto</p>
-    </div>
+    <h1>
+      Centro Productivo de Manufactura, Mobiliario y Soluciones Habitacionales
+    </h1>
 
-    <div class="content">
+    <p>
+      Región de Coquimbo · Documentación del proyecto
+    </p>
+  </header>
 
-        <div class="intro">
-            <h2>Documentación digital</h2>
-            <p>Antecedentes principales del proyecto presentado.</p>
-        </div>
 
-        <div class="document">
-            <h3>01 · Proyecto completo</h3>
-            <p>Anteproyecto de inversión y antecedentes generales del proyecto.</p>
-            <a class="button"
-               href="proyecto%20de%20Inversi%C3%B3n%20Centro%20Productivo%20de%20Manufactura%2C%20Mobiliario%20y%20Soluciones%20Habitacionales.pdf"
-               target="_blank">
-               VER PROYECTO PDF
-            </a>
-        </div>
+  <main>
 
-        <div class="document">
-            <h3>02 · Presentación del proyecto</h3>
-            <p>Presentación ejecutiva del Centro Productivo.</p>
-            <a class="button"
-               href="Centro%20Productivo%20de%20Manufactura%2C%20Mobiliario%20y%20Soluciones%20Habitacionales.pptx"
-               target="_blank">
-               VER / DESCARGAR PPT
-            </a>
-        </div>
+    <section class="intro">
+      <h2>Documentación digital</h2>
 
-        <div class="document">
-            <h3>03 · Carta Gantt</h3>
-            <p>Cronograma de implementación y puesta en marcha del proyecto.</p>
-            <a class="button"
-               href="carta%20gantt%20Centro%20Productivo%20de%20Manufactura%2C%20Mobiliario%20y%20Soluciones%20Habitacionales.pdf"
-               target="_blank">
-               VER CARTA GANTT
-            </a>
-        </div>
+      <p>
+        Antecedentes principales del proyecto presentado ante el Ministerio
+        de Bienes Nacionales.
+      </p>
+    </section>
 
-        <div class="footer">
-            Centro Productivo de Manufactura, Mobiliario y Soluciones Habitacionales
-            <br>
-            Región de Coquimbo · Chile
-        </div>
 
-    </div>
+    <section class="documents">
 
-</div>
+      <!-- PROYECTO PDF -->
+      <article class="card">
+
+        <div class="number">01 · PROYECTO COMPLETO</div>
+
+        <h3>
+          Informe de Proyecto
+        </h3>
+
+        <p>
+          Documento completo con la descripción del proyecto, objetivos,
+          inversión, infraestructura, operación, empleo, normativa,
+          sostenibilidad y antecedentes complementarios.
+        </p>
+
+        <a
+          class="button"
+          href="proyecto%20de%20Inversi%C3%B3n%20Centro%20Productivo%20de%20Manufactura%2C%20Mobiliario%20y%20Soluciones%20Habitacionales.pdf"
+          target="_blank">
+          VER PROYECTO PDF
+        </a>
+
+      </article>
+
+
+      <!-- PPT -->
+      <article class="card">
+
+        <div class="number">02 · PRESENTACIÓN</div>
+
+        <h3>
+          Presentación del Proyecto
+        </h3>
+
+        <p>
+          Presentación ejecutiva con los principales antecedentes,
+          beneficios regionales, modelo productivo, inversión,
+          compromiso y proyección del centro.
+        </p>
+
+        <a
+          class="button"
+          href="Centro%20Productivo%20de%20Manufactura%2C%20Mobiliario%20y%20Soluciones%20Habitacionales.pptx"
+          target="_blank">
+          VER / DESCARGAR PPT
+        </a>
+
+      </article>
+
+
+      <!-- GANTT -->
+      <article class="card">
+
+        <div class="number">03 · PLANIFICACIÓN</div>
+
+        <h3>
+          Carta Gantt
+        </h3>
+
+        <p>
+          Cronograma general de implementación del proyecto,
+          desde la planificación inicial hasta la puesta en marcha
+          y producción regular.
+        </p>
+
+        <a
+          class="button"
+          href="carta%20gantt%20Centro%20Productivo%20de%20Manufactura%2C%20Mobiliario%20y%20Soluciones%20Habitacionales.pdf"
+          target="_blank">
+          VER CARTA GANTT
+        </a>
+
+      </article>
+
+    </section>
+
+
+    <div class="line"></div>
+
+    <section class="intro" style="margin-bottom: 0;">
+      <p>
+        Documentación digital complementaria del proyecto
+      </p>
+    </section>
+
+  </main>
+
+
+  <footer>
+
+    <p>
+      <strong>Centro Productivo de Manufactura, Mobiliario y Soluciones Habitacionales</strong>
+    </p>
+
+    <p>
+      Región de Coquimbo · Chile
+    </p>
+
+    <p style="margin-top: 8px;">
+      Proyecto presentado por
+      <span class="red">Luis Alfonso Urquieta Rojas</span>
+    </p>
+
+  </footer>
 
 </body>
 </html>
